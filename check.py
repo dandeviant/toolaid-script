@@ -1,5 +1,7 @@
 '''
-check if figlet is installed 
+if you're not Daniel, pls ignore this. The script don't use this one :)
+
+to check if figlet is installed 
 '''
 
 import apt, time

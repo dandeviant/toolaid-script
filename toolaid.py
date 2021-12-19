@@ -84,6 +84,17 @@ def main(): # main body of the script input
 #clear terminal with shell command
 os.system('clear')
 
+
+username = os.popen('whoami').read()
+
 title()
-option()
-main()
+if os.geteuid() != 0:
+	print('\n================================================\033[1;35;49m')
+	print("\nThis script gonna run lots of installing with apt.")
+	print("So, the script needs superuser access.")
+	print('\033[1;31;49m')
+	print('Please try again with "sudo". Bye')
+	print('\033[0m')
+else:
+	option()
+	main()

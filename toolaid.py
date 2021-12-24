@@ -9,12 +9,15 @@ def option():
 	print('\033[1;31;49m======================================================  \033[0m')
 	print('toolaid commands\n')
 	print('[-c]lear   : Clear Terminal')
-	print('[-c]ommand : Display toolaid commands')
 	print('[-o]ption  : Display options')
 	print() 
 	print('\033[1;31;49m====================================================== \033[0m')
 	print('Select Options\n')
-	print('[1] Basic Pentesting/Hacking Tools')
+	
+	# hacking tools not used as of now, uncomment later
+	# print('[1] Basic Pentesting/Hacking Tools')
+
+
 	print('[2] Linux Basic Package Install')
 	print('[3] Linux Basic Shell Commands')
 	print('\n[5] Developer Mode (mode for devs, which is Dan alone)')
@@ -53,9 +56,9 @@ def main(): # main body of the script input
 				byebye()
 				quit()
 
-			elif command == '-clear': 	#clear screen 	
+			elif (command == '-clear') or (command == '-c'): 	#clear screen 	
 				os.system('clear')
-				print('Enter [-o]ption to display the options')
+				print('Enter [-o]ption to display the options\n')
 
 			#redisplay options and call option() function
 			elif (command == '-option') or (command == '-o'): 
@@ -85,12 +88,13 @@ def main(): # main body of the script input
 os.system('clear')
 
 
-username = os.popen('whoami').read()
 
 title()
 if os.geteuid() != 0:
-	print('\n================================================\033[1;35;49m')
-	print("\nThis script gonna run lots of installing with apt.")
+	print('\n================================================')
+	username = os.popen('whoami').read()
+	print("Current user: %s" %(username))
+	print("\033[1;35;49mThis script gonna run lots of installing.")
 	print("So, the script needs superuser access.")
 	print('\033[1;31;49m')
 	print('Please try again with "sudo". Bye')

@@ -1,4 +1,4 @@
-# toolaid-script
+# toolaid - Python script for Debian-based Linux distros
 Repo for toolaid
 
 toolaid is my first very own Python-based scripts for Linux \
